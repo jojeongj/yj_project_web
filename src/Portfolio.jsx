@@ -1,0 +1,82 @@
+import Styled from "styled-components"
+
+const Container = Styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 128px 0;
+`
+const InnerContainer = Styled.div`
+    width: 1000px;
+`
+const BoxTitle = Styled.div`
+    font-size: 32px;
+    font-weight: 600px;
+    padding: 12px 0;
+`
+const BoxSubTitle = Styled.div`
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.6);
+    padding: 12px 0;
+`
+const ImageContents = Styled.div`
+    margin: 16px 0;
+    padding: 64px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 350px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 20px;
+    background-position: center center;
+`
+const ContainerText = Styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+`
+const ButtonContainer = Styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+`
+const ContentsButton = Styled.div`
+    width: 200px;
+    height: 45px;
+    background: red;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+export default function Portfolio() {
+    return (
+        <Container>
+            {/* 1000px 중앙정렬*/}
+            <InnerContainer>
+                <div>
+                    <BoxTitle>온∙오프라인 언제 어디서든</BoxTitle>
+                    <BoxSubTitle>간편하고 빠르게 매매/임대차 정보와 투자 인사이트를 받아보세요.</BoxSubTitle>
+                </div>
+
+                {
+                    Array(3).fill("").map((_, i) => <ImageContents>
+                        <ContainerText>
+                            <div>카카오 비즈 채널</div>
+                            <div>선별된 스마트한 핵심 투자 정보를 받아보세요!</div>
+                            <div>
+                                <div>주기적으로 업데이트 되는 공실률 정보</div>
+                                <div>최근 시세 정보에 기반한 투자 인사이트</div>
+                                <div>시시각각 변동되는 정부 정책과 규제 소식</div>
+                            </div>
+                        </ContainerText>
+                        <ButtonContainer>
+                            <ContentsButton>채널 바로가기</ContentsButton>
+                        </ButtonContainer>
+                    </ImageContents>
+                    )}
+            </InnerContainer>
+        </Container>
+    )
+}
